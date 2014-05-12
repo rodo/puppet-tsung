@@ -1,4 +1,5 @@
 #
+# Will install tsung with src /home/tsung/tsung
 #
 #
 class tsung::install
@@ -55,15 +56,5 @@ class tsung::install
    	user => 'root',
    	command => 'make install',
    }
-
-
-
-#   git::repo{'tsung':
-#	path => '/home/${username}/tsung',
-#	source => 'https://github.com/processone/tsung.git',
-#	branch => 'master'
-#    }
-
-
 
 }
