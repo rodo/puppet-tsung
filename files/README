@@ -1,1 +1,9 @@
-ssh-keygen -t dsa -f id_dsa -q
+Create the ssh key
+==================
+
+$ cd /etc/puppet/modules/tsung/files/
+$ ssh-keygen -t dsa -f id_dsa -q
+
+the puppet daemon will need to access the id_dsa file, by default this
+file is protected with mode 0400, do what you want to make it
+available by puppetmaster.
