@@ -9,10 +9,10 @@ class tsung::dependencies {
   package { "make": ensure => present }
   package { "erlang-base": ensure => present }
   package { "erlang-crypto": ensure => present }
-  package { "erlang-xmerl": ensure => present }
-  package { "erlang-ssl": ensure => present }
-  package { "erlang-snmp": ensure => present }
   package { "erlang-dev": ensure => present }
   package { "erlang-eunit": ensure => present }
-  
+  package { "erlang-inets": ensure => present }
+  package { "erlang-snmp": ensure => present }
+  package { "erlang-ssl": ensure => present }
+  package { "erlang-xmerl": ensure => present }
 }
