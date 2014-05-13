@@ -27,7 +27,7 @@ class tsung::install
 
     exec { "git checkout $tsung_tag":
       cwd => $dir,
-      command => '/bin/sh -c "cd tsung/ ; git checkout -b $tsungtag"',
+      command => '/bin/sh -c "cd tsung/ ; git checkout -b v1.5.1"',
       logoutput => on_failure,
       onlyif => ["test -d $dir"],
       require => Package['git']
