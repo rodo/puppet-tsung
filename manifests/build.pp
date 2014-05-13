@@ -17,10 +17,8 @@ class tsung::build
     #environment => ['SHELL=/bin/bash'],
   }
 
-
-
   exec { "./configure in $dir":
-    command => '/bin/bash -l -c "export HOME=/home/tsung ; ./configure"',
+    command => '/bin/bash -l -c "./configure"',
     cwd => $dir,
     logoutput => on_failure,
     require => Package['erlang-dev','autoconf']
@@ -28,7 +26,7 @@ class tsung::build
     
     exec { "make in $dir":
       cwd => $dir,
-      command => '/bin/bash -l -c "export HOME=/home/tsung ; make"',
+      command => '/bin/bash -l -c make',
       } ->
       
       exec { "make install in $dir":
