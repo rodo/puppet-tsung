@@ -15,17 +15,6 @@ class tsung::install
     mode    => 0744,
   }
 
-  package { "git": ensure => present }
-  package { "autoconf": ensure => present }
-  package { "automake": ensure => present }
-  package { "make": ensure => present }
-  package { "erlang-base": ensure => present }
-  package { "erlang-crypto": ensure => present }
-  package { "erlang-xmerl": ensure => present }
-  package { "erlang-ssl": ensure => present }
-  package { "erlang-dev": ensure => present }
-  package { "erlang-eunit": ensure => present }
-
   Exec {
     user => 'tsung',
     cwd => '/home/tsung',
