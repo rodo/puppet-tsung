@@ -62,7 +62,7 @@ class tsung::install
           exec { "make install in $dir":
    	    cwd => $dir,
    	    user => 'root',
-   	    command => '/bin/bash -l -c make install',
+   	    command => '/bin/bash -l -c "make install"',
           }
           
 }
