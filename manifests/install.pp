@@ -51,7 +51,7 @@ class tsung::install
         command => '/bin/bash -l -c "./configure"',
         cwd => $dir,
         logoutput => on_failure,
-        require => Package['erlang-base','erlang-dev','autoconf']
+        require => Package['erlang-dev','autoconf']
         } ->
         
         exec { "make in $dir":

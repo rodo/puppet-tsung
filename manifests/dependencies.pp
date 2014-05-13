@@ -8,11 +8,39 @@ class tsung::dependencies {
   package { "automake": ensure => present }
   package { "make": ensure => present }
   package { "erlang-base": ensure => present }
-  package { "erlang-crypto": ensure => present }
-  package { "erlang-dev": ensure => present }
-  package { "erlang-eunit": ensure => present }
-  package { "erlang-inets": ensure => present }
-  package { "erlang-snmp": ensure => present }
-  package { "erlang-ssl": ensure => present }
-  package { "erlang-xmerl": ensure => present }
+
+  package { "erlang-crypto":
+    ensure => present,
+    require => Package['erlang-base']
+  }
+  
+  package { "erlang-eunit":
+    ensure => present,
+    require => Package['erlang-crypto']
+  }
+
+  package { "erlang-inets":
+    ensure => present,
+    require => Package['erlang-eunit']
+  }
+
+  package { "erlang-snmp":
+    ensure => present,
+    require => Package['erlang-inets']
+  }
+
+  package { "erlang-ssl":
+    ensure => present,
+    require => Package['erlang-snmp']
+  }
+  
+  package { "erlang-xmerl":
+    ensure => present,
+    require => Package['erlang-ssl']
+  }
+
+  package { "erlang-dev":
+    ensure => present,
+    require => Package['erlang-xmerl']
+  }
 }

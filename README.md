@@ -3,6 +3,21 @@ puppet-tsung
 
 Puppet module to install tsung from source
 
+This module only install dependencies to run tsung, the perl scripts
+distribute will not work, you'll have to install by your own gnuplot
+ans libtemplate-perl on the controller.
+
+TESTED ON
+=========
+
+* Ubuntu 14.04 LTS 64 Bits (puppet agent 3.3)
+
+* Ubuntu 12.04 LTS 64 Bits (puppet agent 3.3)
+
+* Debian Wheezy 7.4
+
+Ubuntu releases were tested on OpenStack VM and Amazon EC2 instance
+
 INSTALL
 =======
 
