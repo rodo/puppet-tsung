@@ -25,20 +25,18 @@ class tsung::install
     require => Package['git']
     } ->
 
-    exec { "git checkout $tsung_tag":
+    exec { "git pull":
       cwd => $dir,
-      command => '/bin/sh -c "git checkout -B v1.5.1"',
+      command => 'git pull origin master',
       logoutput => on_failure,
       onlyif => ["test -d $dir"],
-      require => Package['git']
-      } ->
+    } ->
 
-      exec { "git pull":
-        cwd => $dir,
-        command => '/bin/sh -c "cd tsung/ ; git pull origin master"',
-        logoutput => on_failure,
-        onlyif => ["test -d $dir"],
-        require => Package['git']
-        }
-        
+    exec { "git checkout $tsungtag":
+      cwd => $dir,
+      command => 'git checkout v1.5.1',
+      logoutput => on_failure,
+      onlyif => ["test -d $dir"],
+      }
+      
 }
